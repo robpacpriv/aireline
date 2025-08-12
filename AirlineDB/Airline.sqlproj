@@ -70,5 +70,8 @@
     <Build Include="air\Tables\Country.sql" />
     <Build Include="air\Tables\Continent.sql" />
     <Build Include="air\Tables\City.sql" />
+    <Build Include="air\Tables\Building.sql" />
+    <Build Include="air\Tables\Aircraft.sql" />
+    <Build Include="air\Tables\AircraftInspection.sql" />
   </ItemGroup>
 </Project>
