@@ -9,10 +9,10 @@
 	[StartTime] [DATETIME2](7) NULL,
 	[StopTime] [DATETIME2](7) NULL,
 	[PartitionKey] [INT] NULL,
-	[DateCreated] [DATETIME2](7) NULL,
+	[DateCreated] [DATETIME2](7) NOT NULL,
 	[SessionId] [SMALLINT] NULL,
 	[ApplicationName] [NVARCHAR](128) NULL
-) --ON [psPartitionKeyDateHour]([PartitionKey])
+) ON [psPartitionKeyDateHour]([PartitionKey])
 ;
 
 GO

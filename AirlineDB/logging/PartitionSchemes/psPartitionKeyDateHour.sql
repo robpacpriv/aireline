@@ -1,0 +1,34 @@
+CREATE PARTITION SCHEME
+	psPartitionKeyDateHour
+AS PARTITION
+	pfPartitionKeyDateHour
+TO
+	(
+		[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+		,[PRIMARY]
+	)

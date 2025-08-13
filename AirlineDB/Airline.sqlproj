@@ -62,6 +62,12 @@
     <Folder Include="Security\Schemas" />
     <Folder Include="air" />
     <Folder Include="air\Tables" />
+    <Folder Include="air\PartitionSchemes" />
+    <Folder Include="air\PartitionFunctions" />
+    <Folder Include="logging\PartitionFunctions" />
+    <Folder Include="logging\PartitionSchemes" />
+    <Folder Include="logging\Stored Procedures" />
+    <Folder Include="air\Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="logging\Tables\LogStoredProcedure.sql" />
@@ -72,6 +78,17 @@
     <Build Include="air\Tables\City.sql" />
     <Build Include="air\Tables\Building.sql" />
     <Build Include="air\Tables\Aircraft.sql" />
-    <Build Include="air\Tables\AircraftInspection.sql" />
+    <Build Include="air\Tables\__AircraftInspection.sql" />
+    <Build Include="air\Tables\Crew.sql" />
+    <Build Include="air\Tables\BuildingType.sql" />
+    <Build Include="air\Tables\CrewType.sql" />
+    <Build Include="air\Tables\Flight.sql" />
+    <Build Include="air\Tables\FlightCrew.sql" />
+    <Build Include="air\PartitionSchemes\psPartitionKeyYearMonth.sql" />
+    <Build Include="air\PartitionFunctions\pfPartitionKeyYearMonth.sql" />
+    <Build Include="air\Tables\Airline.sql" />
+    <Build Include="logging\PartitionFunctions\pfPartitionKey.sql" />
+    <Build Include="logging\PartitionSchemes\psPartitionKeyDateHour.sql" />
+    <Build Include="air\Views\vCrew.sql" />
   </ItemGroup>
 </Project>
