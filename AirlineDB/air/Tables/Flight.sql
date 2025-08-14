@@ -3,11 +3,11 @@
 	[FlightId] [BIGINT] IDENTITY(1,1) NOT NULL,
 	[AircraftId] [BIGINT] NOT NULL,
 	[FlightNumber] [NVARCHAR](200) NOT NULL,
-	[DepartueAirportId] [BIGINT] NOT NULL,
+	[DepartureAirportId] [BIGINT] NOT NULL,
 	[ArivalAirportId] [BIGINT] NOT NULL,
-	[DepartueDateTime] DATETIME2(7) NULL,
+	[DepartureDateTime] DATETIME2(7) NULL,
 	[ArivalDateTime] DATETIME2(7) NULL,
-	[DepartueDateTimePlanned] DATETIME2(7) NOT NULL,
+	[DepartureDateTimePlanned] DATETIME2(7) NOT NULL,
 	[ArivalDateTimePlanned] DATETIME2(7) NOT NULL,
 	--[IsDeleted] bit CONSTRAINT [DF_air_Flight_isDeleted] DEFAULT 0 NOT NULL,
 	[DeactivationDate] DATETIME2(7) NULL, -- when it is set, than by night it will be deleted
@@ -16,7 +16,7 @@
 
 	CONSTRAINT [PK_Flight] PRIMARY key CLUSTERED ([FlightId] ASC, [PartitionKey] DESC) ON [psPartitionKeyYearMonth] ([PartitionKey]),
 	CONSTRAINT [FK_Flight_Aircraft] FOREIGN KEY ([AircraftId]) REFERENCES [air].[Aircraft] ([AircraftId]),
-	CONSTRAINT [FK_Flight_DepartueAirportId] FOREIGN KEY ([DepartueAirportId]) REFERENCES [air].[Building] ([BuildingId]),
+	CONSTRAINT [FK_Flight_DepartureAirportId] FOREIGN KEY ([DepartureAirportId]) REFERENCES [air].[Building] ([BuildingId]),
 	CONSTRAINT [FK_Flight_ArivalAirportId] FOREIGN KEY ([ArivalAirportId]) REFERENCES [air].[Building] ([BuildingId])
 );
 GO

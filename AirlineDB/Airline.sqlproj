@@ -99,5 +99,6 @@
     <Build Include="air\Tables\UserToTypeToSeniority.sql" />
     <Build Include="Security\Schemas\ap.sql" />
     <Build Include="ap\Views\vCrew.sql" />
+    <Build Include="air\Tables\CrewHoursWorked.sql" />
   </ItemGroup>
 </Project>
