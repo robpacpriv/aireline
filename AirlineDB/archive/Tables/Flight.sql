@@ -17,6 +17,6 @@
 );
 GO
 
-CREATE UNIQUE NONCLUSTERED INDEX [UIX_archive_Flight_FlightNumber] ON [archive].[Flight] ([FlightNumber], [DeactivationDate], [PartitionKey] DESC)
+CREATE NONCLUSTERED INDEX [IX_archive_Flight_FlightNumber] ON [archive].[Flight] ([FlightNumber], [DeactivationDate], [PartitionKey] DESC)
  WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_key = OFF) ON psPartitionKeyYearMonth([PartitionKey])
 GO

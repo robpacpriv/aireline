@@ -21,6 +21,6 @@
 );
 GO
 
-CREATE UNIQUE NONCLUSTERED INDEX [UIX_air_Flight_FlightNumber] ON [air].[Flight] ([FlightNumber], [DeactivationDate], [PartitionKey] DESC)
+CREATE NONCLUSTERED INDEX [IX_air_Flight_FlightNumber] ON [air].[Flight] ([FlightNumber], [DeactivationDate], [PartitionKey] DESC)
 WITH (ONLINE = ON) ON psPartitionKeyYearMonth([PartitionKey])
 GO
