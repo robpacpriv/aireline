@@ -13,10 +13,10 @@
 	[PartitionKey] AS (DATEPART(YEAR,[DateCreated])*(100)+DATEPART(MONTH,[DateCreated])) PERSISTED NOT NULL,
 	[DateCreated] DATETIME2(7) CONSTRAINT [DF_air_Flight_DateCreated] DEFAULT (SYSUTCDATETIME()) NOT NULL,
 
-	CONSTRAINT [PK_Flight] PRIMARY key CLUSTERED ([FlightId] ASC, [PartitionKey] DESC) ON [psPartitionKeyYearMonth] ([PartitionKey])
+	CONSTRAINT [PK_Flight] PRIMARY key CLUSTERED ([FlightId] ASC, [PartitionKey] DESC) WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_key = OFF) ON [psPartitionKeyYearMonth] ([PartitionKey])
 );
 GO
 
 CREATE UNIQUE NONCLUSTERED INDEX [UIX_archive_Flight_FlightNumber] ON [archive].[Flight] ([FlightNumber], [DeactivationDate], [PartitionKey] DESC)
-WITH (ONLINE = ON) ON psPartitionKeyYearMonth([PartitionKey])
+ WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_key = OFF) ON psPartitionKeyYearMonth([PartitionKey])
 GO

@@ -15,9 +15,9 @@
 	[DateCreated] DATETIME2(7) CONSTRAINT [DF_air_Flight_DateCreated] DEFAULT (SYSUTCDATETIME()) NOT NULL,
 
 	CONSTRAINT [PK_Flight] PRIMARY key CLUSTERED ([FlightId] ASC, [PartitionKey] DESC) ON [psPartitionKeyYearMonth] ([PartitionKey]),
-	CONSTRAINT [FK_Flight_Aircraft] FOREIGN KEY ([AircraftId]) REFERENCES [air].[Aircraft] ([AircraftId]),
-	CONSTRAINT [FK_Flight_DepartureAirportId] FOREIGN KEY ([DepartureAirportId]) REFERENCES [air].[Building] ([BuildingId]),
-	CONSTRAINT [FK_Flight_ArivalAirportId] FOREIGN KEY ([ArivalAirportId]) REFERENCES [air].[Building] ([BuildingId])
+	CONSTRAINT [FK_Flight_Aircraft] FOREIGN KEY ([AircraftId]) REFERENCES [air].[Aircraft] ([AircraftId]), -- during switching partition we need to remove FK from here and get them back at the end of the process
+	CONSTRAINT [FK_Flight_DepartureAirportId] FOREIGN KEY ([DepartureAirportId]) REFERENCES [air].[Building] ([BuildingId]), -- during switching partition we need to remove FK from here and get them back at the end of the process
+	CONSTRAINT [FK_Flight_ArivalAirportId] FOREIGN KEY ([ArivalAirportId]) REFERENCES [air].[Building] ([BuildingId]) -- during switching partition we need to remove FK from here and get them back at the end of the process
 );
 GO
 
