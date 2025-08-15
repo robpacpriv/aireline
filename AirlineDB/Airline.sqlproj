@@ -67,10 +67,11 @@
     <Folder Include="logging\Stored Procedures" />
     <Folder Include="archive" />
     <Folder Include="archive\Tables" />
-    <Folder Include="air\PartitionFunctions" />
-    <Folder Include="air\PartitionSchemes" />
     <Folder Include="ap" />
     <Folder Include="ap\Views" />
+    <Folder Include="air\Functions" />
+    <Folder Include="air\Functions\PartitionFunctions" />
+    <Folder Include="air\Functions\PartitionSchemes" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="logging\Tables\LogStoredProcedure.sql" />
@@ -93,13 +94,17 @@
     <Build Include="Security\Schemas\archive.sql" />
     <Build Include="archive\Tables\Flight.sql" />
     <Build Include="archive\Tables\FlightCrew.sql" />
-    <Build Include="air\PartitionSchemes\pfPartitionKeyYearMonth.sql" />
-    <Build Include="air\PartitionFunctions\psPartitionKeyYearMonth.sql" />
     <Build Include="air\Tables\UserSeniority.sql" />
     <Build Include="air\Tables\UserToTypeToSeniority.sql" />
     <Build Include="Security\Schemas\ap.sql" />
-    <Build Include="ap\Views\vCrew.sql" />
+    <Build Include="ap\Views\vGetUserDetails.sql" />
     <Build Include="air\Tables\CrewHoursWorked.sql" />
     <Build Include="archive\Tables\CrewHoursWorked.sql" />
+    <Build Include="ap\Views\vGetFlightDetails.sql" />
+    <Build Include="air\Functions\PartitionFunctions\psPartitionKeyYearMonth.sql" />
+    <Build Include="air\Functions\PartitionSchemes\pfPartitionKeyYearMonth.sql" />
+    <Build Include="air\Functions\fnCalculateUserFlownInLastHours.sql" />
+    <Build Include="air\Functions\fnCalculateUserFlownInLastDays.sql" />
+    <Build Include="air\Functions\fnCalculateDateKey_inline.sql" />
   </ItemGroup>
 </Project>
