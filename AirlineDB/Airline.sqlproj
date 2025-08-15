@@ -100,5 +100,6 @@
     <Build Include="Security\Schemas\ap.sql" />
     <Build Include="ap\Views\vCrew.sql" />
     <Build Include="air\Tables\CrewHoursWorked.sql" />
+    <Build Include="archive\Tables\CrewHoursWorked.sql" />
   </ItemGroup>
 </Project>
