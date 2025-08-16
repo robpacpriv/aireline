@@ -1,17 +1,17 @@
-CREATE VIEW [ap].[vGetUserDetails]
+CREATE VIEW [ap].[vGetUserWorkedHoursPerMonth_5]
 --WITH SCHEMABINDING
 	AS
 
 SELECT
 	CONCAT([U].[FirstName],' ',[U].[LastName]) AS [FullName]
 	,[U].[SocialSecurityNumber]
-	,[air].[fnCalculateUserFlownInLastHours] ([U].[UserId], -40) AS [FlownInLast40Hours]
-	,[air].[fnCalculateUserFlownInLastDays] ([U].[UserId], -7) AS [FlownInLast7Days]
-	,[air].[fnCalculateUserFlownInLastDays] ([U].[UserId], -28) AS [FlownInLast28Days]
 	,[UT].[UserTypeName] AS [CrewType]
 	,[US].[UserSeniorityName]
-	,[U].[DeactivationDate]
+	,[U].[DeactivationDate] AS [UserDeactivationDate]
+	,[X].[HoursWorked]
+	,[X].[Month]
 FROM [air].[User] AS [U]
+CROSS APPLY [air].[fnCalculateUserWorkingHoursByMonth] ( [U].[UserId], -1) AS [X]
 INNER JOIN [air].[UserToTypeToSeniority] AS [UTS]
 	ON [UTS].[UserId] = [U].[UserId]
 INNER JOIN [air].[UserType] AS [UT]

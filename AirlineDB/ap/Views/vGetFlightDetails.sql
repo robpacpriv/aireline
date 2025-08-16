@@ -1,4 +1,5 @@
 CREATE VIEW [ap].[vGetFlightDetails]
+--WITH SCHEMABINDING
 	AS
 
 SELECT
@@ -8,8 +9,10 @@ SELECT
 	,[DepartureC].[CityName] AS [DepartureCity]
 	,[F].[ArivalDateTimePlanned]
 	,[ArivalC].[CityName] AS [ArivalCity]
-	,DATEDIFF(MINUTE,[F].[DepartureDateTimePlanned], [F].[ArivalDateTimePlanned]) AS [FlightDuration (minutes)]
-	,DATEDIFF(HOUR,[F].[DepartureDateTimePlanned], [F].[ArivalDateTimePlanned]) AS [FlightDuration (hours)]
+	,DATEDIFF(MINUTE,[F].[DepartureDateTime], [F].[ArivalDateTime]) AS [FlightDuration (minutes)]
+	,DATEDIFF(MINUTE,[F].[DepartureDateTimePlanned], [F].[ArivalDateTimePlanned]) AS [FlightDurationPlanned (minutes)]
+	,DATEDIFF(HOUR,[F].[DepartureDateTime], [F].[ArivalDateTime]) AS [FlightDuration (hours)]
+	,DATEDIFF(HOUR,[F].[DepartureDateTimePlanned], [F].[ArivalDateTimePlanned]) AS [FlightDurationPlanned (hours)]
 FROM [air].[Flight] AS [F]
 INNER JOIN [air].[Aircraft] AS [AC]
 	ON [AC].[AircraftId] = [F].[AircraftId]

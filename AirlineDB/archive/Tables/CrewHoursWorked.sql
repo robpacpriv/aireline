@@ -3,7 +3,7 @@
 	[CrewHoursWorkedId] [BIGINT] IDENTITY(1,1) NOT NULL,
 	[FlightId] [BIGINT] NOT NULL,
 	[UserId] [BIGINT] NOT NULL,
-	[HoursWorked] [INT] NOT NULL,
+	[HoursWorked] [INT] NULL,
 	--[DepartureDateTime] DATETIME2(7) NULL,
 	--[ArivalDateTime] DATETIME2(7) NULL,
 	[PartitionKey] AS (DATEPART(YEAR,[DateCreated])*(100)+DATEPART(MONTH,[DateCreated])) PERSISTED NOT NULL,

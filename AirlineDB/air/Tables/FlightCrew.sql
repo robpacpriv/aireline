@@ -2,6 +2,7 @@
 (
 	[FlightId] [BIGINT] NOT NULL,
 	[UserId] [BIGINT] NOT NULL,
+	[DeactivationDate] DATETIME2(7) NULL,
 	[PartitionKey] AS (DATEPART(YEAR,[DateCreated])*(100)+DATEPART(MONTH,[DateCreated])) PERSISTED NOT NULL,
 	[DateCreated] DATETIME2(7) CONSTRAINT [DF_air_FlightCrew_DateCreated] DEFAULT (SYSUTCDATETIME()) NOT NULL,
 

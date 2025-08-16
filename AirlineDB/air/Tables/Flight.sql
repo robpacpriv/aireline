@@ -9,8 +9,7 @@
 	[ArivalDateTime] DATETIME2(7) NULL,
 	[DepartureDateTimePlanned] DATETIME2(7) NOT NULL,
 	[ArivalDateTimePlanned] DATETIME2(7) NOT NULL,
-	--[IsDeleted] bit CONSTRAINT [DF_air_Flight_isDeleted] DEFAULT 0 NOT NULL,
-	[DeactivationDate] DATETIME2(7) NULL, -- when it is set, than by night it will be deleted
+	[DeactivationDate] DATETIME2(7) NULL,
 	[PartitionKey] AS (DATEPART(YEAR,[DateCreated])*(100)+DATEPART(MONTH,[DateCreated])) PERSISTED NOT NULL,
 	[DateCreated] DATETIME2(7) CONSTRAINT [DF_air_Flight_DateCreated] DEFAULT (SYSUTCDATETIME()) NOT NULL,
 

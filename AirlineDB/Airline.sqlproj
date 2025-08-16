@@ -106,5 +106,8 @@
     <Build Include="air\Functions\fnCalculateUserFlownInLastHours.sql" />
     <Build Include="air\Functions\fnCalculateUserFlownInLastDays.sql" />
     <Build Include="air\Functions\fnCalculateDateKey_inline.sql" />
+    <Build Include="ap\Views\vGetUserWorkedHoursPerMonth_5.sql" />
+    <Build Include="ap\Views\vGetFlyingCrew_3.sql" />
+    <Build Include="air\Functions\fnCalculateUserWorkingHoursByMonth.sql" />
   </ItemGroup>
 </Project>
