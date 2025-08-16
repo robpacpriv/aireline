@@ -1,4 +1,4 @@
-CREATE FUNCTION [air].[fnCalculateUserWorkingHoursByMonth]
+CREATE FUNCTION [air].[fnCalculateUserFlownHoursByMonth]
 (
 	@UserId BIGINT,
 	@MonthsAgo INT

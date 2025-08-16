@@ -1,4 +1,4 @@
-CREATE VIEW [ap].[vGetUserWorkedHoursPerMonth_5]
+CREATE VIEW [ap].[vGetUserFlownHoursPerMonth]
 --WITH SCHEMABINDING
 	AS
 
@@ -11,7 +11,7 @@ SELECT
 	,[X].[HoursFlown]
 	,[X].[Month]
 FROM [air].[User] AS [U]
-CROSS APPLY [air].[fnCalculateUserWorkingHoursByMonth] ( [U].[UserId], -1) AS [X]
+CROSS APPLY [air].[fnCalculateUserFlownHoursByMonth] ( [U].[UserId], -1) AS [X]
 INNER JOIN [air].[UserToTypeToSeniority] AS [UTS]
 	ON [UTS].[UserId] = [U].[UserId]
 INNER JOIN [air].[UserType] AS [UT]

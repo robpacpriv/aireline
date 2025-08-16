@@ -6,6 +6,7 @@
 	[HoursFlown] [DECIMAL] (5,2) NULL,
 	--[DepartureDateTime] DATETIME2(7) NULL,
 	--[ArivalDateTime] DATETIME2(7) NULL,
+	[Date] AS  (DATEPART(YEAR,[DateCreated])*(10000)+DATEPART(MONTH,[DateCreated])*(100)+DATEPART(DAY,[DateCreated])) PERSISTED NOT NULL,
 	[PartitionKey] AS (DATEPART(YEAR,[DateCreated])*(100)+DATEPART(MONTH,[DateCreated])) PERSISTED NOT NULL,
 	[DateCreated] DATETIME2(7) CONSTRAINT [DF_air_CrewHoursFlown_DateCreated] DEFAULT (SYSUTCDATETIME()) NOT NULL,
 

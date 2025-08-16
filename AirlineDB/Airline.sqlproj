@@ -106,10 +106,11 @@
     <Build Include="air\Functions\fnCalculateUserFlownInLastHours.sql" />
     <Build Include="air\Functions\fnCalculateUserFlownInLastDays.sql" />
     <Build Include="air\Functions\fnCalculateDateKey_inline.sql" />
-    <Build Include="ap\Views\vGetUserWorkedHoursPerMonth_5.sql" />
+    <Build Include="ap\Views\vGetUserFlownHoursPerMonth_5.sql" />
     <Build Include="ap\Views\vGetFlyingCrew_3.sql" />
-    <Build Include="air\Functions\fnCalculateUserWorkingHoursByMonth.sql" />
+    <Build Include="air\Functions\fnCalculateUserFlownHoursByMonth.sql" />
     <Build Include="ap\Views\vGetAvaibleCrewByLocation.sql" />
     <Build Include="air\Tables\FlightType.sql" />
+    <Build Include="air\Tables\UserWorkingHours.sql" />
   </ItemGroup>
 </Project>

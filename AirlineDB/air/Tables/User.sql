@@ -2,6 +2,7 @@
 (
 	[UserId] [BIGINT] IDENTITY(1,1) NOT NULL,
 	[AirlineId] [BIGINT] NOT NULL,
+	[BuildingId] [BIGINT] NULL,
 	[Identifier] [NVARCHAR](150) NOT NULL,
 	[FirstName] [NVARCHAR](500) NOT NULL,
 	[SecoundName] [NVARCHAR](500) NULL,
@@ -13,6 +14,7 @@
 	[DateUpdated] DATETIME2(7) NULL,
 
 	CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([UserId] ASC),
-	CONSTRAINT [FK_User_Airline] FOREIGN KEY ([AirlineId]) REFERENCES [air].[Airline] ([AirlineId])
+	CONSTRAINT [FK_User_Airline] FOREIGN KEY ([AirlineId]) REFERENCES [air].[Airline] ([AirlineId]),
+	CONSTRAINT [FK_User_Building] FOREIGN KEY ([BuildingId]) REFERENCES [air].[Building] ([BuildingId])
 );
 GO
