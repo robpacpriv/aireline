@@ -24,3 +24,35 @@ GO
 
 CREATE NONCLUSTERED INDEX [IX_air_Flight_FlightNumber] ON [air].[Flight] ([FlightNumber], [DeactivationDate], [PartitionKey] DESC) ON psPartitionKeyYearMonth([PartitionKey])
 GO
+
+CREATE TRIGGER [air].[TR_Flight_update_ArivalDateTime] ON [air].[Flight]
+AFTER UPDATE
+    AS
+BEGIN
+    SET NOCOUNT ON;
+	
+	IF(UPDATE([ArivalDateTime]))
+	BEGIN
+		UPDATE [U]
+			SET
+				[U].[BuildingId] = [i].[ArivalAirportId]
+		FROM [air].[User] AS [U]
+		INNER JOIN [air].[FlightCrew] AS [FC]
+			ON [FC].[UserId] = [U].[UserId]
+		INNER JOIN inserted AS [i]
+			ON [FC].[FlightId] = [i].[FlightId]
+		WHERE [i].[ArivalDateTime] IS NOT NULL
+
+		INSERT INTO [air].[CrewHoursFlown] ([FlightId], [UserId], [HoursFlown])
+		SELECT 
+			[i].[FlightId],
+			[FC].[UserId],
+			DATEDIFF(hh,[i].DepartureDateTime,[i].ArivalDateTime) AS [HoursWorked]
+		FROM inserted AS [i]
+		INNER JOIN [air].[FlightCrew] AS [FC]
+			ON [FC].[FlightId] = [i].[FlightId]
+		WHERE [i].[ArivalDateTime] IS NOT NULL
+
+	END
+END
+
