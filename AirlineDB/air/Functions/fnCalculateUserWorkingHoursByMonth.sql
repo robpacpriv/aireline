@@ -10,7 +10,7 @@ RETURN
 	(
 	SELECT
 		SUM([HoursWorked]) AS [HoursWorked]
-		,[CW].[PartitionKey] AS [MONTH]
+		,[CW].[PartitionKey] AS [Month]
 	FROM [air].[CrewHoursWorked] AS [CW]
 	CROSS APPLY [air].[fnCalculateDateKey_inline] (DATEADD(MONTH,@MonthsAgo, SYSUTCDATETIME()), 'YYYYMM') AS [x]
 	WHERE
