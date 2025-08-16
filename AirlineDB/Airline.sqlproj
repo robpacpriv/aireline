@@ -98,7 +98,7 @@
     <Build Include="air\Tables\UserToTypeToSeniority.sql" />
     <Build Include="Security\Schemas\ap.sql" />
     <Build Include="ap\Views\vGetUserDetails.sql" />
-    <Build Include="air\Tables\CrewHoursWorked.sql" />
+    <Build Include="air\Tables\CrewHoursFlown.sql" />
     <Build Include="archive\Tables\CrewHoursWorked.sql" />
     <Build Include="ap\Views\vGetFlightDetails.sql" />
     <Build Include="air\Functions\PartitionFunctions\psPartitionKeyYearMonth.sql" />
@@ -109,5 +109,7 @@
     <Build Include="ap\Views\vGetUserWorkedHoursPerMonth_5.sql" />
     <Build Include="ap\Views\vGetFlyingCrew_3.sql" />
     <Build Include="air\Functions\fnCalculateUserWorkingHoursByMonth.sql" />
+    <Build Include="ap\Views\vGetAvaibleCrewByLocation.sql" />
+    <Build Include="air\Tables\FlightType.sql" />
   </ItemGroup>
 </Project>

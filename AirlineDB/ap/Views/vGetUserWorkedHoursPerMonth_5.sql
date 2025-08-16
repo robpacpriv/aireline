@@ -8,7 +8,7 @@ SELECT
 	,[UT].[UserTypeName] AS [CrewType]
 	,[US].[UserSeniorityName]
 	,[U].[DeactivationDate] AS [UserDeactivationDate]
-	,[X].[HoursWorked]
+	,[X].[HoursFlown]
 	,[X].[Month]
 FROM [air].[User] AS [U]
 CROSS APPLY [air].[fnCalculateUserWorkingHoursByMonth] ( [U].[UserId], -1) AS [X]

@@ -10,7 +10,7 @@ BEGIN
 		@CurrentUTCTime DATETIME2(7) = SYSUTCDATETIME(),
 		@FlownHours INT
 
-	SET @FlownHours = (SELECT SUM([HoursWorked]) FROM [air].[CrewHoursWorked] AS [CW] CROSS APPLY [air].[fnCalculateDateKey_inline] (DATEADD(HOUR,@HoursAgo, SYSUTCDATETIME()), 'YYYYMM') x WHERE [CW].[UserId] = @UserId AND [CW].[DateCreated] > DATEADD(HOUR, @HoursAgo, @CurrentUTCTime) AND [CW].[PartitionKey] >= [x].[Res] )
+	SET @FlownHours = (SELECT SUM([HoursFlown]) FROM [air].[CrewHoursFlown] AS [CW] CROSS APPLY [air].[fnCalculateDateKey_inline] (DATEADD(HOUR,@HoursAgo, SYSUTCDATETIME()), 'YYYYMM') x WHERE [CW].[UserId] = @UserId AND [CW].[DateCreated] > DATEADD(HOUR, @HoursAgo, @CurrentUTCTime) AND [CW].[PartitionKey] >= [x].[Res] )
 
 	RETURN (@FlownHours);
 

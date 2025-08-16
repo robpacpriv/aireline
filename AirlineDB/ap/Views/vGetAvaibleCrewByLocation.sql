@@ -1,0 +1,55 @@
+CREATE VIEW [ap].[vGetAvaibleCrewByLocation]
+--WITH SCHEMABINDING
+	AS
+
+SELECT
+	*
+FROM [air].[Flight] AS [F]
+
+--SELECT
+--	[AR].[AirlineName]
+--	,[AC].[AircraftName]
+--	,[AC].[AircrafType]
+--	,[F].[FlightNumber]
+--	,[F].[DepartureDateTimePlanned]
+--	,[DepartureC].[CityName] AS [DepartureCity]
+--	,[F].[ArivalDateTimePlanned]
+--	,[ArivalC].[CityName] AS [ArivalCity]
+--	,DATEDIFF(MINUTE,[F].[DepartureDateTime], ISNULL([F].[ArivalDateTime],SYSUTCDATETIME())) AS [FlightDuration (minutes)]
+--	,DATEDIFF(MINUTE,[F].[DepartureDateTimePlanned], [F].[ArivalDateTimePlanned]) AS [FlightDurationPlanned (minutes)]
+--	,DATEDIFF(HOUR,[F].[DepartureDateTime], ISNULL([F].[ArivalDateTime],SYSUTCDATETIME())) AS [FlightDuration (hours)]
+--	,DATEDIFF(HOUR,[F].[DepartureDateTimePlanned], [F].[ArivalDateTimePlanned]) AS [FlightDurationPlanned (hours)]
+--	,CONCAT([U].[FirstName],' ',[U].[LastName]) AS [FullName]
+--	,[U].[SocialSecurityNumber]
+--	,[UT].[UserTypeName] AS [CrewType]
+--	,[US].[UserSeniorityName]
+--FROM [air].[Flight] AS [F]
+--CROSS APPLY [air].[fnCalculateDateKey_inline] ( DATEADD(DAY,-1, SYSUTCDATETIME()) , 'YYYYMM') AS [X]
+--INNER JOIN [air].[Aircraft] AS [AC]
+--	ON [AC].[AircraftId] = [F].[AircraftId]
+--INNER JOIN [air].[Airline] AS [AR]
+--	ON [AR].[AirlineId] = [AC].[AirlineId]
+--INNER JOIN [air].[Building] AS [DepartureB]
+--	ON [DepartureB].[BuildingId] = [F].[DepartureAirportId]
+--INNER JOIN [air].[City] AS [DepartureC]
+--	ON [DepartureC].[CityId] = [DepartureB].[CityId]
+--INNER JOIN [air].[Building] AS [ArivalB]
+--	ON [ArivalB].[BuildingId] = [F].[ArivalAirportId]
+--INNER JOIN [air].[City] AS [ArivalC]
+--	ON [ArivalC].[CityId] = [ArivalB].[CityId]
+--INNER JOIN [air].[FlightCrew] AS [FC]
+--	ON [FC].[PartitionKey] = [F].[PartitionKey]
+--	AND [FC].[FlightId] = [F].[FlightId]
+--INNER JOIN [air].[User] AS [U]
+--	ON [U].[UserId] = [FC].[UserId]
+--INNER JOIN [air].[UserToTypeToSeniority] AS [UTS]
+--	ON [UTS].[UserId] = [U].[UserId]
+--INNER JOIN [air].[UserType] AS [UT]
+--	ON [UT].[UserTypeId] = [UTS].[UserTypeId]
+--INNER JOIN [air].[UserSeniority] AS [US]
+--	ON [US].[UserSeniorityId] = [UTS].[UserSeniorityId]
+--WHERE
+--	[F].[PartitionKey] >= [X].[Res]
+--	AND [F].[DeactivationDate] IS NULL
+--	AND [F].[DepartureDateTime] IS NOT NULL
+--	AND [F].[ArivalDateTime] IS NULL;
