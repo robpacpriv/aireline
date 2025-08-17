@@ -1,6 +1,6 @@
 CREATE VIEW [ap].[vGetFlyingCrew]
 --WITH SCHEMABINDING
-	AS
+AS
 
 SELECT
 	[AR].[AirlineName]

@@ -1,6 +1,6 @@
 CREATE VIEW [ap].[vGetFlightDetails]
 --WITH SCHEMABINDING
-	AS
+AS
 
 SELECT
 	[AR].[AirlineName]

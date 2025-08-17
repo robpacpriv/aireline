@@ -1,4 +1,4 @@
-﻿CREATE TABLE [air].[CrewHoursFlown]--[air].[CrewHoursWorked]
+﻿CREATE TABLE [air].[CrewHoursFlown]
 (
 	[CrewHoursFlownId] [BIGINT] IDENTITY(1,1) NOT NULL,
 	[FlightId] [BIGINT] NOT NULL,

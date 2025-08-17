@@ -1,6 +1,6 @@
 CREATE VIEW [ap].[vGetAvaibleCrewByLocation]
 --WITH SCHEMABINDING
-	AS
+AS
 
 SELECT
 	*
