@@ -22,6 +22,9 @@ BEGIN
 							AND [CW].[PartitionKey] >= [x].[Res]
 						)
 
+	IF @FlownHours IS NULL
+		SET @FlownHours = 0;
+
 	RETURN (@FlownHours);
 
 END

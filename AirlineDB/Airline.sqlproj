@@ -106,18 +106,20 @@
     <Build Include="air\Functions\fnCalculateUserFlownInLastHours.sql" />
     <Build Include="air\Functions\fnCalculateUserFlownInLastDays.sql" />
     <Build Include="air\Functions\fnCalculateDateKey_inline.sql" />
-    <Build Include="ap\Views\vGetUserFlownHoursPerMonth_5.sql" />
-    <Build Include="ap\Views\vGetFlyingCrew_3.sql" />
+    <Build Include="ap\Views\5_vGetUserFlownHoursPerMonth.sql" />
+    <Build Include="ap\Views\3_vGetFlyingCrew.sql" />
     <Build Include="air\Functions\fnCalculateUserFlownHoursByMonth.sql" />
-    <Build Include="ap\Views\vGetAvaibleCrewByLocation.sql" />
     <Build Include="air\Tables\FlightType.sql" />
     <Build Include="air\Tables\UserWorkingHours.sql" />
     <Build Include="archive\Tables\UserWorkingHours.sql" />
-    <Build Include="ap\Views\vGetUserNotFollowingRules_4.sql" />
+    <Build Include="ap\Views\4_vGetUserNotFollowingRules.sql" />
     <Build Include="air\Functions\fnCalculateUserFlownInLastConsecutiveHours.sql" />
     <Build Include="air\Functions\fnCountOverMaxDefaultFlightDutyForFlightAttendant.sql" />
     <Build Include="air\Functions\fnDefaultMaxFlightDutyForFlightAttendant.sql" />
-    <Build Include="air\Functions\fnDefaultMinRestBEtweenFlightsForFlightAttendant.sql" />
+    <Build Include="air\Functions\fnDefaultMinRestBetweenFlightsForFlightAttendant.sql" />
     <Build Include="air\Functions\fnCountUnderMinDefaultRestForFlightAttendant.sql" />
+    <Build Include="air\Functions\2_fnFindCrewForFlightByBuilding.sql" />
+    <Build Include="air\Functions\fnCheckIfFlightHoursFitsUserWorkingHours.sql" />
+    <Build Include="air\Functions\fnCountUserRestByFlight.sql" />
   </ItemGroup>
 </Project>

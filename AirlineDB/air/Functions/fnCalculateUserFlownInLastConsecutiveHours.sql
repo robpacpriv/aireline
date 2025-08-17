@@ -69,6 +69,9 @@ BEGIN
 
 	SET @FlownConsecutiveHours = (SELECT  SUM(DATEDIFF(HOUR,[DepartureDateTime], [ArivalDateTime])) FROM @FinalTable);
 
+	IF @FlownConsecutiveHours IS NULL
+		SET @FlownConsecutiveHours = 0;
+
 	RETURN (@FlownConsecutiveHours);
 
 END

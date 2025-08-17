@@ -1,9 +1,9 @@
-CREATE FUNCTION [air].[fnDefaultMinRestBEtweenFlightsForFlightAttendant]()
+CREATE FUNCTION [air].[fnDefaultMinRestBetweenFlightsForFlightAttendant]()
 RETURNS INT
 AS
 BEGIN
-    DECLARE @MinRestBEtweenFlightsForFlightAttendant INT = 9
+    DECLARE @MinRestBetweenFlightsForFlightAttendant INT = 9
 
-    RETURN (@MinRestBEtweenFlightsForFlightAttendant)
+    RETURN (@MinRestBetweenFlightsForFlightAttendant)
 END
 GO
