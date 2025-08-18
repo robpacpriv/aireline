@@ -16,7 +16,7 @@ RETURN
 	WHERE
 		[CW].[PartitionKey] >= [x].[Res]
 		AND [CW].[UserId] = @UserId
-		GROUP BY [CW].[PartitionKey]
+	GROUP BY [CW].[PartitionKey]
 	);
 
 GO
